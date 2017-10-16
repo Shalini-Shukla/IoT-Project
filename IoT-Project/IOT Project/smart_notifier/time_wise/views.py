@@ -7,3 +7,9 @@ from django.shortcuts import redirect
 
 def index(request,date):
     return render(request,'time_wise/index.html',{'date':date})
+
+
+def calender(request):
+	date = datetime.datetime.now().date()
+	time = datetime.datetime.now().time()
+	return render(request, 'calender/calender.html', {"date":date , "time":time})
